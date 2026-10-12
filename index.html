@@ -1,166 +1,32 @@
-
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Kedar Apkar — L2 Network Administrator</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Inter',system-ui,sans-serif;background:#F8FAFC;color:#0F172A;line-height:1.55;-webkit-font-smoothing:antialiased}
-.top{position:sticky;top:0;z-index:50;background:rgba(248,250,252,0.88);backdrop-filter:blur(20px);border-bottom:1px solid #E2E8F0;padding:10px 14px;display:flex;justify-content:space-between;align-items:center}
-.k{width:44px;height:44px;border-radius:14px;background:#0F172A;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px}
-.primary{background:#0F172A;color:#fff;border-radius:999px;padding:10px 18px;font-weight:600;font-size:14px;display:flex;gap:8px;align-items:center;text-decoration:none}
-.icon{width:42px;height:42px;border-radius:999px;border:1px solid #E2E8F0;background:#fff;display:flex;align-items:center;justify-content:center;text-decoration:none}
-.wrap{max-width:800px;margin:0 auto;padding:18px 18px 80px}
-.pill{display:inline-flex;gap:8px;border:1px solid #E2E8F0;border-radius:999px;padding:8px 14px;font-size:13px;background:#fff;color:#334155;margin:16px 0 24px}
-h1{font-size:44px;letter-spacing:-0.04em;line-height:0.95;font-weight:800}
-h1 span{color:#2563EB}
-.sub{margin-top:12px;font-size:21px;font-weight:600;line-height:1.25;color:#334155}
-.txt{margin-top:20px;font-size:16.5px;line-height:1.75;color:#475569}
-.btn-dark{display:inline-flex;gap:10px;background:#0F172A;color:#fff;border-radius:999px;padding:14px 22px;font-weight:600;text-decoration:none;font-size:15px;margin-top:22px}
-.btn-light{border:1px solid #E2E8F0;background:#fff;border-radius:999px;padding:12px 18px;font-weight:500;font-size:15px;color:#0F172A;text-decoration:none;display:inline-flex;gap:8px;align-items:center}
-.row{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
-.stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:32px}
-.stat{border:1px solid #E2E8F0;background:#fff;border-radius:22px;padding:20px}
-.stat .l{font-size:11px;letter-spacing:0.15em;color:#94A3B8;font-weight:700}
-.stat .v{font-size:30px;font-weight:800;margin:8px 0;letter-spacing:-0.03em}
-.stat .s{font-size:13px;color:#64748B;line-height:1.35}
-.section{margin-top:56px;padding-top:28px;border-top:1px solid #EEF2F7}
-.pill-label{display:inline-flex;gap:8px;align-items:center;border:1px solid #E2E8F0;background:#fff;border-radius:999px;padding:7px 14px;font-size:11px;letter-spacing:0.15em;color:#94A3B8;font-weight:700;margin-bottom:18px}
-.h2{font-size:34px;letter-spacing:-0.03em;line-height:1.05;font-weight:800;margin-bottom:24px}
-.card{border:1px solid #E2E8F0;background:#fff;border-radius:28px;padding:22px;margin-bottom:18px}
-.tline{position:relative;padding-left:32px;border-left:1.5px solid #E2E8F0;margin-left:10px;display:flex;flex-direction:column;gap:16px}
-.titem{position:relative;background:#F8FAFC;border:1px solid #E2E8F0;border-radius:20px;padding:18px}
-.titem.active{background:#EFF6FF;border-color:#BFDBFE}
-.dot{width:16px;height:16px;border-radius:999px;border:2px solid #CBD5E1;background:#fff;position:absolute;left:-41px;top:22px}
-.titem.active .dot{background:#2563EB;border-color:#2563EB;box-shadow:0 0 0 8px #EFF6FF;width:20px;height:20px;left:-43px}
-.badge-present{position:absolute;right:12px;top:12px;background:#0F172A;color:#fff;border-radius:999px;padding:6px 12px;font-size:11px;font-weight:700}
-.wbody{padding:22px}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{border:1px solid #E2E8F0;background:#F8FAFC;border-radius:999px;padding:8px 14px;font-size:13px;color:#334155}
-.bullet{margin-top:18px;display:flex;gap:14px}
-.bullet .ic{width:36px;height:36px;border-radius:999px;background:#EFF6FF;border:1px solid #DBEAFE;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px}
-.metrics{border:1px solid #E2E8F0;background:#F8FAFC;border-radius:22px;padding:18px;margin-top:22px}
-.metrics-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:12px}
-.metric{border:1px solid #E2E8F0;background:#fff;border-radius:18px;padding:16px;text-align:center}
-.metric b{font-size:18px;display:block}
-.metric span{font-size:11px;letter-spacing:0.12em;color:#94A3B8;font-weight:700;margin-top:4px;display:block}
-.tech{margin-top:18px}
-.tech-label{font-size:11px;letter-spacing:0.15em;color:#94A3B8;font-weight:700;margin-bottom:10px}
-.tech-chips{display:flex;flex-wrap:wrap;gap:8px}
-.tech-chip{border:1px solid #E2E8F0;background:#fff;border-radius:999px;padding:8px 14px;font-size:13px;color:#475569}
-.expand-card{border:1px solid #E2E8F0;background:#fff;border-radius:28px;padding:24px;margin-bottom:20px}
-.expand-head{display:flex;gap:16px;align-items:flex-start}
-.expand-icon{width:56px;height:56px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px;color:#fff;flex-shrink:0}
-.expand-icon.wipro{background:#0F172A}
-.expand-icon.vsyn{background:#0E7490}
-.expand-icon.js{background:#475569}
-.expand-title{font-weight:800;font-size:20px;letter-spacing:-0.02em}
-.expand-sub{font-size:14px;color:#64748B;margin-top:2px;line-height:1.4}
-.expand-meta{font-size:13px;color:#94A3B8;margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-.meta-pill{border:1px solid #E2E8F0;background:#F8FAFC;border-radius:999px;padding:6px 12px;font-size:12px}
-.resp-title{font-size:11px;letter-spacing:0.15em;color:#94A3B8;font-weight:700;margin-top:24px;margin-bottom:14px;border-top:1px solid #EEF2F7;padding-top:20px}
-.resp-list{list-style:none;display:flex;flex-direction:column;gap:16px}
-.resp-list li{display:flex;gap:12px;font-size:15px;line-height:1.6;color:#475569}
-.resp-list li::before{content:"";width:8px;height:8px;border-radius:999px;background:#2563EB;flex-shrink:0;margin-top:8px}
-.edu-card{border:1px solid #E2E8F0;background:#fff;border-radius:24px;padding:20px;display:flex;gap:16px;align-items:flex-start;margin-bottom:14px}
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',system-ui,sans-serif;background:#F8FAFC;color:#0F172A;line-height:1.55;-webkit-font-smoothing:antialiased}.top{position:sticky;top:0;z-index:50;background:rgba(248,250,252,0.88);backdrop-filter:blur(20px);border-bottom:1px solid #E2E8F0;padding:10px 14px;display:flex;justify-content:space-between;align-items:center}.k{width:44px;height:44px;border-radius:14px;background:#0F172A;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px}.primary{background:#0F172A;color:#fff;border-radius:999px;padding:10px 18px;font-weight:600;font-size:14px;display:flex;gap:8px;align-items:center;text-decoration:none}.icon{width:42px;height:42px;border-radius:999px;border:1px solid #E2E8F0;background:#fff;display:flex;align-items:center;justify-content:center;text-decoration:none}.wrap{max-width:800px;margin:0 auto;padding:18px 18px 80px}.pill{display:inline-flex;gap:8px;border:1px solid #E2E8F0;border-radius:999px;padding:8px 14px;font-size:13px;background:#fff;color:#334155;margin:16px 0 24px}h1{font-size:44px;letter-spacing:-0.04em;line-height:0.95;font-weight:800}h1 span{color:#2563EB}.sub{margin-top:12px;font-size:21px;font-weight:600;line-height:1.25;color:#334155}.txt{margin-top:20px;font-size:16.5px;line-height:1.75;color:#475569}.btn-dark{display:inline-flex;gap:10px;background:#0F172A;color:#fff;border-radius:999px;padding:14px 22px;font-weight:600;text-decoration:none;font-size:15px;margin-top:22px}.btn-light{border:1px solid #E2E8F0;background:#fff;border-radius:999px;padding:12px 18px;font-weight:500;font-size:15px;color:#0F172A;text-decoration:none;display:inline-flex;gap:8px;align-items:center}.row{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}.stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:32px}.stat{border:1px solid #E2E8F0;background:#fff;border-radius:22px;padding:20px}.stat .l{font-size:11px;letter-spacing:0.15em;color:#94A3B8;font-weight:700}.stat .v{font-size:30px;font-weight:800;margin:8px 0}.stat .s{font-size:13px;color:#64748B}.section{margin-top:56px;padding-top:28px;border-top:1px solid #EEF2F7}.pill-label{display:inline-flex;gap:8px;align-items:center;border:1px solid #E2E8F0;background:#fff;border-radius:999px;padding:7px 14px;font-size:11px;letter-spacing:0.15em;color:#94A3B8;font-weight:700;margin-bottom:18px}.h2{font-size:34px;letter-spacing:-0.03em;line-height:1.05;font-weight:800;margin-bottom:24px}.card{border:1px solid #E2E8F0;background:#fff;border-radius:28px;padding:22px;margin-bottom:18px}.tline{position:relative;padding-left:32px;border-left:1.5px solid #E2E8F0;margin-left:10px;display:flex;flex-direction:column;gap:16px}.titem{position:relative;background:#F8FAFC;border:1px solid #E2E8F0;border-radius:20px;padding:18px}.titem.active{background:#EFF6FF;border-color:#BFDBFE}.dot{width:16px;height:16px;border-radius:999px;border:2px solid #CBD5E1;background:#fff;position:absolute;left:-41px;top:22px}.titem.active .dot{background:#2563EB;border-color:#2563EB;box-shadow:0 0 0 8px #EFF6FF;width:20px;height:20px;left:-43px}.badge-present{position:absolute;right:12px;top:12px;background:#0F172A;color:#fff;border-radius:999px;padding:6px 12px;font-size:11px;font-weight:700}.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{border:1px solid #E2E8F0;background:#F8FAFC;border-radius:999px;padding:8px 14px;font-size:13px}.tech-chips{display:flex;flex-wrap:wrap;gap:8px}.tech-chip{border:1px solid #E2E8F0;background:#fff;border-radius:999px;padding:8px 14px;font-size:13px;color:#475569}.expand-card{border:1px solid #E2E8F0;background:#fff;border-radius:28px;padding:24px;margin-bottom:20px}.expand-head{display:flex;gap:16px;align-items:flex-start}.expand-icon{width:56px;height:56px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px;color:#fff;flex-shrink:0}.expand-icon.wipro{background:#0F172A}.expand-icon.vsyn{background:#0E7490}.expand-icon.js{background:#475569}.expand-title{font-weight:800;font-size:20px}.expand-sub{font-size:14px;color:#64748B;margin-top:2px}.expand-meta{font-size:13px;color:#94A3B8;margin-top:8px;display:flex;gap:8px;flex-wrap:wrap}.meta-pill{border:1px solid #E2E8F0;background:#F8FAFC;border-radius:999px;padding:6px 12px;font-size:12px}.resp-title{font-size:11px;letter-spacing:0.15em;color:#94A3B8;font-weight:700;margin-top:24px;margin-bottom:14px;border-top:1px solid #EEF2F7;padding-top:20px}.resp-list{list-style:none;display:flex;flex-direction:column;gap:16px}.resp-list li{display:flex;gap:12px;font-size:15px;line-height:1.6;color:#475569}.resp-list li::before{content:"";width:8px;height:8px;border-radius:999px;background:#2563EB;flex-shrink:0;margin-top:8px}.metrics{border:1px solid #E2E8F0;background:#F8FAFC;border-radius:22px;padding:18px;margin-top:22px}.metrics-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:12px}.metric{border:1px solid #E2E8F0;background:#fff;border-radius:18px;padding:16px;text-align:center}.metric b{font-size:18px;display:block}.metric span{font-size:11px;letter-spacing:0.12em;color:#94A3B8;font-weight:700;margin-top:4px;display:block}.tech{margin-top:18px}.tech-label{font-size:11px;letter-spacing:0.15em;color:#94A3B8;font-weight:700;margin-bottom:10px}.edu-card{border:1px solid #E2E8F0;background:#fff;border-radius:24px;padding:20px;display:flex;gap:16px;align-items:flex-start;margin-bottom:14px}
 </style>
 </head>
 <body>
-<div class="top">
-<div style="display:flex;gap:10px;align-items:center">
-<div class="k">K</div>
-<div style="line-height:1.2"><b style="font-size:14px">Kedar Apkar</b><br><small style="color:#64748B;font-size:12px">📍 Wakad, Pune</small><br><small style="color:#64748B;font-size:12px">📞 +91 8956578351 | kedar.byte19@gmail.com</small></div>
-</div>
-<div style="display:flex;gap:8px;align-items:center"><a class="icon" href="tel:+918956578351">📞</a><a class="primary" href="mailto:kedar.byte19@gmail.com">✉️ Email</a></div>
-</div>
-
+<div class="top"><div style="display:flex;gap:10px;align-items:center"><div class="k">K</div><div style="line-height:1.2"><b style="font-size:14px">Kedar Apkar</b><br><small style="color:#64748B;font-size:12px">📍 Wakad, Pune</small><br><small style="color:#64748B;font-size:12px">📞 +91 8956578351 | kedar.byte19@gmail.com</small></div></div><div style="display:flex;gap:8px;align-items:center"><a class="icon" href="tel:+918956578351">📞</a><a class="primary" href="mailto:kedar.byte19@gmail.com">✉️ Email</a></div></div>
 <div class="wrap">
 <div class="pill">🌐 Wakad, Pune • Wipro Hinjewadi PDC2</div>
 <h1>Kedar <span>Apkar</span></h1>
 <div class="sub">L2 Network Administrator<br>Cloud • Full Stack in Progress</div>
 <p class="txt">I have strong understanding of network infrastructure and its protocols like eBGP, SSH, EIGRP, OSPF, HSRP etc. I specialize in delivering high level topologies, building customer repo, troubleshooting infra, providing Modern encrypted solution with netscreens and Palo Alto, MPLS on 8k series C8300 latest catalyst routers and Giving delivery updates to customers with real time progress and calculated timeline, keeping expectations aligned</p>
-
 <a class="btn-dark" href="mailto:kedar.byte19@gmail.com">✉️ kedar.byte19@gmail.com</a>
-<div class="row"><a class="btn-light" href="tel:+918956578351">📞 +91 8956578351</a><a class="btn-light" onclick="navigator.clipboard.writeText('+91 8956578351')">⎙ Copy</a></div>
-<div class="row"><a class="btn-light" href="https://linkedin.com" target="_blank">in LinkedIn ↗</a><a class="btn-light" href="https://github.com/Loadedkd" target="_blank">GitHub</a></div>
-
-<div class="stats">
-<div class="stat"><div class="l">PROJECTS</div><div class="v">500+</div><div class="s">Delivered at Wipro • BT</div></div>
-<div class="stat"><div class="l">EXPERIENCE</div><div class="v">10 yrs</div><div class="s">2014 → Present • 3 roles</div></div>
-<div class="stat"><div class="l">ACCOUNTS</div><div class="v">200+</div><div class="s">Vsynergize Lifeline</div></div>
-</div>
-
-<div class="section">
-<div class="pill-label">💼 WORK EXPERIENCE</div>
-<div class="h2">Chronological path — 10 years</div>
-<div class="card">
-<div style="font-size:11px;letter-spacing:0.15em;color:#94A3B8;font-weight:700;margin-bottom:18px">TIMELINE</div>
-<div class="tline">
-<div class="titem"><div class="dot"></div><div style="font-size:12px;color:#94A3B8;font-weight:600">2014 — 2016</div><div style="font-weight:700;margin-top:6px">J & S Power Solutions</div><div style="font-size:13px;color:#64748B">Executive — Power Products</div><div class="chips" style="margin-top:10px"><span class="chip">High-Duty Transformers</span><span class="chip">Field + Inside Sales</span></div></div>
-<div class="titem"><div class="dot"></div><div style="font-size:12px;color:#94A3B8;font-weight:600">Aug 2017 — Feb 2020</div><div style="font-weight:700;margin-top:6px">Vsynergize</div><div style="font-size:13px;color:#64748B">Customer Service Executive</div><div class="chips" style="margin-top:10px"><span class="chip">200+</span><span class="chip">Assurance Wireless</span></div></div>
-<div class="titem active"><div class="dot"></div><span class="badge-present">PRESENT</span><div style="font-size:12px;color:#94A3B8;font-weight:600">Feb 2020 — Present</div><div style="font-weight:700;margin-top:6px">Wipro Technologies</div><div style="font-size:13px;color:#64748B">Network Administrator — L2</div><div class="chips" style="margin-top:10px"><span class="chip">500+</span><span class="chip">UK EMEA</span></div></div>
-</div>
-</div>
-</div>
-
-<div class="expand-card">
-<div class="expand-head"><div class="expand-icon wipro">W</div><div style="flex:1"><div class="expand-title">Wipro Technologies</div><div class="expand-sub">Network Administrator — L2 • Full-time • UK EMEA</div><div class="expand-meta">🏢 Hinjewadi PDC2, Pune — BT Group Account • Feb 2020 — Present <span class="meta-pill">5+ Years</span></div></div></div>
-<div class="resp-title">WHAT I DID — KEY RESPONSIBILITIES</div>
-<ul class="resp-list">
-<li>Currently L2 Network Administrator for British Telecom Group, handling UK EMEA network infra from ordering to installation and repair / upgrade, add on & modify services.</li>
-<li>Best at troubleshooting infra end-to-end diagnosis of MPLS, MTCE, hosting solution.</li>
-<li>Working on high level topologies including Modern encrypted solution with netscreens and Palo Alto and secure SD-WAN designs.</li>
-<li>Delivering MPLS infrastructure with latest 8k series C8300 latest catalyst routers, coordinating last-mile, carrier handoffs, and customer CPE commissioning.</li>
-<li>Preparing network diagrams and maintaining version-controlled documentation on shared drives for delivery and ops teams.</li>
-<li>Giving delivery updates to customers with real time progress and calculated timeline, keeping expectations aligned.</li>
-<li>Keeping all internal systems updated for order entering, milestone tracking, and driving orders to closure.</li>
-</ul>
-<div class="metrics"><div style="font-size:11px;letter-spacing:0.15em;color:#94A3B8;font-weight:700">METRICS</div><div class="metrics-grid"><div class="metric"><b>500+</b><span>PROJECTS DELIVERED</span></div><div class="metric"><b>UK EMEA</b><span>REGION</span></div><div class="metric"><b>British Telecom Group</b><span>ACCOUNT</span></div></div></div>
-<div class="tech"><div class="tech-label">TECH & TOOLS</div><div class="tech-chips"><span class="tech-chip">TCP/IP</span><span class="tech-chip">DNS</span><span class="tech-chip">DHCP</span><span class="tech-chip">VLAN</span><span class="tech-chip">Palo Alto</span><span class="tech-chip">Netscreen</span><span class="tech-chip">MPLS</span><span class="tech-chip">8k series</span><span class="tech-chip">C8300</span><span class="tech-chip">Catalyst Routers</span><span class="tech-chip">Network Troubleshooting</span><span class="tech-chip">High Level Topologies</span><span class="tech-chip">Network Diagrams</span></div></div>
-</div>
-
-<div class="expand-card">
-<div class="expand-head"><div class="expand-icon vsyn">V</div><div style="flex:1"><div class="expand-title">Vsynergize</div><div class="expand-sub">Customer Service Executive • Cloud Project • Lifeline Program</div><div class="expand-meta">🏢 Pune — US Process • Aug 2017 — Feb 2020 <span class="meta-pill">2.5 Years</span></div></div></div>
-<div class="resp-title">WHAT I DID</div>
-<ul class="resp-list">
-<li>Cloud-based project for American Government Lifeline Program with 【entity-T-Mobile¦canonical_name=T-Mobile】 Assurance Wireless — providing free phones for eligible citizens.</li>
-<li>Handled accounts from application intake to document validation to monthly subscription setup and benefit activation.</li>
-<li>Resolved live user issues via 【entity-Outlook¦canonical_name=Outlook】, API UI account system, in-built chat, and VBS calling application — SLA-driven.</li>
-<li>Managed accounts using Azure Cloud, ensuring compliance with FCC Lifeline verification and preventing duplicate enrollments.</li>
-<li>Partnered with US carriers and internal QA to streamline validated queues and reduce turnaround time.</li>
-</ul>
-<div class="metrics"><div style="font-size:11px;letter-spacing:0.15em;color:#94A3B8;font-weight:700">METRICS</div><div class="metrics-grid"><div class="metric"><b>200+</b><span>ACCOUNTS</span></div><div class="metric"><b>Assurance Wireless</b><span>PROGRAM</span></div><div class="metric"><b>Azure Cloud</b><span>STACK</span></div></div></div>
-<div class="tech"><div class="tech-label">TECH & TOOLS</div><div class="tech-chips"><span class="tech-chip">Azure Cloud</span><span class="tech-chip">【entity-Outlook¦canonical_name=Outlook】</span><span class="tech-chip">API Integrated UI</span><span class="tech-chip">Live Chat</span><span class="tech-chip">VBS Dialer</span><span class="tech-chip">FCC Compliance</span><span class="tech-chip">Account Lifecycle</span></div></div>
-</div>
-
-<div class="expand-card">
-<div class="expand-head"><div class="expand-icon js">J</div><div style="flex:1"><div class="expand-title">J & S Power Solutions</div><div class="expand-sub">Executive — Power Products • Sales & Service</div><div class="expand-meta">🏢 Pune — Field & Office • 2014 — 2016 <span class="meta-pill">2 Years</span></div></div></div>
-<div class="resp-title">WHAT I DID</div>
-<ul class="resp-list">
-<li>Supplied high-duty transformers — products and services portfolio including sizing, installation support, and comprehensive maintenance.</li>
-<li>Handled enquiries and generated leads by staying in touch with clients over calls and emails, building repeat pipeline.</li>
-<li>Field visits to inspect install position, agree on technical specs, and get invoice signed with commercial closure.</li>
-<li>Provided comprehensive maintenance post-installation, including preventive checks and breakdown support.</li>
-</ul>
-<div class="metrics"><div style="font-size:11px;letter-spacing:0.15em;color:#94A3B8;font-weight:700">METRICS</div><div class="metrics-grid"><div class="metric"><b>High-Duty Transformers</b><span>FOCUS</span></div><div class="metric"><b>Field + Inside Sales</b><span>MODE</span></div><div class="metric"><b>Lead Gen & Service</b><span>FUNCTION</span></div></div></div>
-<div class="tech"><div class="tech-label">TECH & TOOLS</div><div class="tech-chips"><span class="tech-chip">Client Handling</span><span class="tech-chip">Lead Generation</span><span class="tech-chip">Field Inspection</span><span class="tech-chip">Transformer Sales</span><span class="tech-chip">Maintenance</span><span class="tech-chip">Negotiation</span></div></div>
-</div>
-
-<div class="section">
-<div class="pill-label">🎓 EDUCATION</div>
-<div class="edu-card"><div style="width:52px;height:52px;border-radius:16px;background:#F8FAFC;border:1px solid #E2E8F0;display:flex;align-items:center;justify-content:center;font-size:22px">🎓</div><div><div style="font-weight:800;font-size:18px">Diploma in Electronics & Telecommunications</div><div style="color:#0F172A;font-weight:600;margin-top:6px">Pune University</div></div></div>
-<div class="edu-card"><div style="width:52px;height:52px;border-radius:16px;background:#F8FAFC;border:1px solid #E2E8F0;display:flex;align-items:center;justify-content:center;font-size:22px">🎓</div><div><div style="font-weight:800;font-size:18px">B.Tech IT - Singhania University - June 2021 to June 2024</div><div style="color:#64748B;margin-top:6px"><b style="color:#0F172A">Singhania University</b> - June 2021 to June 2024</div></div></div>
-</div>
-
-<div class="section">
-<div class="pill-label">🧱 SKILLS</div>
-<div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px"><span class="tech-chip" style="background:#0F172A;color:#fff">eBGP</span><span class="tech-chip" style="background:#0F172A;color:#fff">OSPF</span><span class="tech-chip" style="background:#0F172A;color:#fff">EIGRP</span><span class="tech-chip" style="background:#0F172A;color:#fff">HSRP</span><span class="tech-chip" style="background:#0F172A;color:#fff">MPLS</span><span class="tech-chip">Palo Alto</span><span class="tech-chip">Netscreen</span><span class="tech-chip">C8300</span><span class="tech-chip">8k Series</span><span class="tech-chip">SD-WAN</span><span class="tech-chip">Azure Cloud</span><span class="tech-chip">HTML</span><span class="tech-chip">CSS</span><span class="tech-chip">JavaScript</span><span class="tech-chip">React</span><span class="tech-chip">Node.js</span><span class="tech-chip">Python</span></div>
-</div>
-
-<div style="margin-top:40px;border:1px dashed #E2E8F0;border-radius:16px;padding:16px;background:#fff;display:flex;justify-content:space-between;font-size:11px;color:#94A3B8;letter-spacing:0.05em"><span>© 2026 KEDAR APKAR — NETWORK / CLOUD / FULL STACK</span><span>BT GROUP UK • EMEA</span></div>
+<div class="row"><a class="btn-light" href="tel:+918956578351">📞 +91 8956578351</a><a class="btn-light" href="#">⎙ Copy</a></div>
+<div class="row"><a class="btn-light" href="#">in LinkedIn ↗</a><a class="btn-light" href="#">GitHub</a></div>
+<div class="stats"><div class="stat"><div class="l">PROJECTS</div><div class="v">500+</div><div class="s">Delivered at Wipro • BT</div></div><div class="stat"><div class="l">EXPERIENCE</div><div class="v">10 yrs</div><div class="s">2014 → Present • 3 roles</div></div><div class="stat"><div class="l">ACCOUNTS</div><div class="v">200+</div><div class="s">Vsynergize Lifeline</div></div></div>
+<div class="section"><div class="pill-label">💼 WORK EXPERIENCE</div><div class="h2">Chronological path — 10 years</div><div class="card"><div style="font-size:11px;letter-spacing:0.15em;color:#94A3B8;font-weight:700;margin-bottom:18px">TIMELINE</div><div class="tline"><div class="titem"><div class="dot"></div><div style="font-size:12px;color:#94A3B8;font-weight:600">2014 — 2016</div><div style="font-weight:700;margin-top:6px">J & S Power Solutions</div><div style="font-size:13px;color:#64748B">Executive — Power Products</div><div class="chips" style="margin-top:10px"><span class="chip">High-Duty Transformers</span><span class="chip">Field + Inside Sales</span></div></div><div class="titem"><div class="dot"></div><div style="font-size:12px;color:#94A3B8;font-weight:600">Aug 2017 — Feb 2020</div><div style="font-weight:700;margin-top:6px">Vsynergize</div><div style="font-size:13px;color:#64748B">Customer Service Executive</div><div class="chips" style="margin-top:10px"><span class="chip">200+</span><span class="chip">Assurance Wireless</span></div></div><div class="titem active"><div class="dot"></div><span class="badge-present">PRESENT</span><div style="font-size:12px;color:#94A3B8;font-weight:600">Feb 2020 — Present</div><div style="font-weight:700;margin-top:6px">Wipro Technologies</div><div style="font-size:13px;color:#64748B">Network Administrator — L2</div><div class="chips" style="margin-top:10px"><span class="chip">500+</span><span class="chip">UK EMEA</span></div></div></div></div></div>
+<div class="expand-card"><div class="expand-head"><div class="expand-icon wipro">W</div><div style="flex:1"><div class="expand-title">Wipro Technologies</div><div class="expand-sub">Network Administrator — L2 • Full-time • UK EMEA</div><div class="expand-meta">🏢 Hinjewadi PDC2 — BT Group Account • Feb 2020 — Present <span class="meta-pill">5+ Years</span></div></div></div><div class="resp-title">WHAT I DID — KEY RESPONSIBILITIES</div><ul class="resp-list"><li>Currently L2 Network Administrator for British Telecom Group, handling UK EMEA network infra from ordering to installation and repair / upgrade.</li><li>Best at troubleshooting infra end-to-end diagnosis of MTCE, hosting solution.</li><li>Working on high level topologies including Modern encrypted solution with netscreens and Palo Alto and secure SD-WAN.</li><li>Delivering network infrastructure coordinating last-mile, carrier handoffs, and customer CPE.</li><li>Preparing network diagrams and maintaining version-controlled documentation.</li><li>Giving delivery updates to customers with real time progress and calculated timeline.</li><li>Keeping all internal systems updated for order entering, milestone tracking, driving orders to closure.</li></ul><div class="metrics"><div style="font-size:11px;letter-spacing:0.15em;color:#94A3B8;font-weight:700">METRICS</div><div class="metrics-grid"><div class="metric"><b>500+</b><span>PROJECTS DELIVERED</span></div><div class="metric"><b>UK EMEA</b><span>REGION</span></div><div class="metric"><b>British Telecom Group</b><span>ACCOUNT</span></div></div></div><div class="tech"><div class="tech-label">TECH & TOOLS</div><div class="tech-chips"><span class="tech-chip">Palo Alto</span><span class="tech-chip">Netscreen</span><span class="tech-chip">Network Troubleshooting</span><span class="tech-chip">High Level Topologies</span><span class="tech-chip">Network Diagrams</span></div></div></div>
+<div class="expand-card"><div class="expand-head"><div class="expand-icon vsyn">V</div><div style="flex:1"><div class="expand-title">Vsynergize</div><div class="expand-sub">Customer Service Executive • Cloud Project • Lifeline Program</div><div class="expand-meta">🏢 Pune — US Process • Aug 2017 — Feb 2020 <span class="meta-pill">2.5 Years</span></div></div></div><div class="resp-title">WHAT I DID</div><ul class="resp-list"><li>Cloud-based project for American Government Lifeline Program with T-Mobile Assurance Wireless.</li><li>Handled accounts from application intake to document validation to subscription setup.</li><li>Resolved live user issues via 【entity-Outlook¦canonical_name=Outlook】, API UI, in-built chat, VBS calling — SLA-driven.</li><li>Managed accounts using Azure Cloud, ensuring FCC Lifeline compliance preventing duplicates.</li><li>Partnered with US carriers and QA to streamline validated queues reduce turnaround.</li></ul><div class="metrics"><div style="font-size:11px;letter-spacing:0.15em;color:#94A3B8;font-weight:700">METRICS</div><div class="metrics-grid"><div class="metric"><b>200+</b><span>ACCOUNTS</span></div><div class="metric"><b>Assurance Wireless</b><span>PROGRAM</span></div><div class="metric"><b>Azure Cloud</b><span>STACK</span></div></div></div><div class="tech"><div class="tech-label">TECH & TOOLS</div><div class="tech-chips"><span class="tech-chip">Azure Cloud</span><span class="tech-chip">【entity-Outlook¦canonical_name=Outlook】</span><span class="tech-chip">API Integrated UI</span><span class="tech-chip">Live Chat</span><span class="tech-chip">VBS Dialer</span><span class="tech-chip">FCC Compliance</span></div></div></div>
+<div class="expand-card"><div class="expand-head"><div class="expand-icon js">J</div><div style="flex:1"><div class="expand-title">J & S Power Solutions</div><div class="expand-sub">Executive — Power Products • Sales & Service</div><div class="expand-meta">🏢 Pune — Field & Office • 2014 — 2016 <span class="meta-pill">2 Years</span></div></div></div><div class="resp-title">WHAT I DID</div><ul class="resp-list"><li>Supplied high-duty transformers — sizing, installation support, maintenance.</li><li>Handled enquiries and generated leads staying in touch with clients.</li><li>Field visits to inspect install position, agree specs, get invoice signed.</li><li>Provided comprehensive maintenance post-installation including preventive checks.</li></ul><div class="metrics"><div style="font-size:11px;letter-spacing:0.15em;color:#94A3B8;font-weight:700">METRICS</div><div class="metrics-grid"><div class="metric"><b>High-Duty Transformers</b><span>FOCUS</span></div><div class="metric"><b>Field + Inside Sales</b><span>MODE</span></div><div class="metric"><b>Lead Gen & Service</b><span>FUNCTION</span></div></div></div><div class="tech"><div class="tech-label">TECH & TOOLS</div><div class="tech-chips"><span class="tech-chip">Client Handling</span><span class="tech-chip">Lead Generation</span><span class="tech-chip">Field Inspection</span><span class="tech-chip">Transformer Sales</span><span class="tech-chip">Maintenance</span></div></div></div>
+<div class="section"><div class="pill-label">🎓 EDUCATION</div><div class="edu-card"><div style="width:52px;height:52px;border-radius:16px;background:#F8FAFC;border:1px solid #E2E8F0;display:flex;align-items:center;justify-content:center;font-size:22px">🎓</div><div><div style="font-weight:800;font-size:18px">Diploma in Electronics & Telecommunications</div><div style="color:#0F172A;font-weight:600;margin-top:6px">Pune University</div></div></div><div class="edu-card"><div style="width:52px;height:52px;border-radius:16px;background:#F8FAFC;border:1px solid #E2E8F0;display:flex;align-items:center;justify-content:center;font-size:22px">🎓</div><div><div style="font-weight:800;font-size:18px">B.Tech IT - Singhania University - June 2021 to June 2024</div><div style="color:#64748B;margin-top:6px"><b style="color:#0F172A">Singhania University</b> - June 2021 to June 2024</div></div></div></div>
+<div class="section"><div class="pill-label">🧱 SKILLS</div><div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px"><span class="tech-chip" style="background:#0F172A;color:#fff">L1 Network Admin</span><span class="tech-chip" style="background:#0F172A;color:#fff">L2 Network Admin</span><span class="tech-chip">Catapult</span><span class="tech-chip">ITIL</span><span class="tech-chip" style="background:#2563EB;color:#fff;border-color:#2563EB">Python</span><span class="tech-chip" style="background:#2563EB;color:#fff;border-color:#2563EB">JavaScript</span><span class="tech-chip" style="background:#2563EB;color:#fff;border-color:#2563EB">Node.js</span><span class="tech-chip">GitHub</span><span class="tech-chip" style="background:#0F172A;color:#fff">Front End Developer</span></div></div>
+<div class="section" style="border-top:none;padding-top:24px;margin-top:24px"><div class="pill-label">🚀 BUILDING NOW</div><div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px"><span class="tech-chip" style="background:#EFF6FF;border-color:#BFDBFE;color:#1D4ED8;font-weight:600">Back End Developer</span><span class="tech-chip" style="background:#EFF6FF;border-color:#BFDBFE;color:#1D4ED8;font-weight:600">HTML</span><span class="tech-chip" style="background:#0F172A;color:#fff;font-weight:600">Full Stack Developer</span></div></div>
 </div>
 </body>
 </html>
+
